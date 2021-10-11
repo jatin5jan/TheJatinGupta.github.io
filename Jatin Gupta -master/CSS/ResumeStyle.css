@@ -1,0 +1,283 @@
+:root
+{
+    --primary-font: 'Ubuntu', sans-serif;
+    --dot-color: #7285A5;
+    --primary-color-education: #768591;
+    --secondary-color-education: #EDEEF1;
+    --primary-color-tskills: #373538;
+    --secondary-color-tskills: #fab301;
+    --primary-color-oskills: #1bb3f4;
+    --secondary-color-oskills: #ff6602;
+    --text-color-oskills: #ffffff;
+    --primary-color-certifications:#aba6bf;
+    --secondary-color-certifications:#595775;
+    --text-color-certifications: #f1e0d6;
+    --primary-color-pdetails: #cf9a41;
+    --secondary-color-pdetails:#006eb9;
+    --text-color-pdetails: #ffffff;
+    --primary-color-achievments: #2bae66ff;
+    --secondary-color-achievments:#fcf6f5ff;
+    --text-color-achievments: #2bae66ff;
+    --shadow-color: white;
+    --header-font: 'Alegreya Sans SC', sans-serif;
+    --box-heading-font:'Secular One', sans-serif;
+    --box-content-font:'Source Sans Pro', sans-serif;
+}
+
+/* Assigning Colors */
+
+#education
+{
+    background-color: var(--primary-color-education);
+}
+.education-divs
+{
+    background-color: var(--secondary-color-education);
+}
+#TechnicalSkills
+{
+    background-color: var(--primary-color-tskills);
+}
+.tskills-divs
+{
+    background-color: var(--secondary-color-tskills);
+}
+#OtherSkills
+{
+    background-color: var(--primary-color-oskills);
+}
+.oskill-divs
+{
+    background-color: var(--secondary-color-oskills);
+}
+#Certifications
+{
+    background-color: var(--primary-color-certifications);
+}
+.certifications-divs
+{
+    background-color: var(--secondary-color-certifications);
+}
+#PersonalDetails
+{
+    background-color: var(--primary-color-pdetails);
+}
+.pdetails-divs
+{
+    background-color: var(--secondary-color-pdetails);
+}
+#Achievements
+{
+    background-color: var(--primary-color-achievments);
+}
+.achievements-divs
+{
+    background-color: var(--secondary-color-achievments)
+}
+/* Common to all */
+
+.boxes
+{
+    position: relative;
+    width: 400px;
+    bottom: 0;
+    border-radius: 5px;
+    padding: 1rem;
+    transition: all 0.5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+}
+.boxes:hover
+{
+    /* X, Y, Blur Radius, Spread Radius, Color */
+    box-shadow: 5px 5px 10px 1px var(--shadow-color);
+}
+.list
+{
+    padding: 50px 0;
+}
+.list-items
+{
+    list-style: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: white;
+}
+
+/* Right Boxes */
+.list-items:nth-child(odd) .boxes{
+    left: 40px;
+    transform: translate(200px, 0);
+}
+
+/* Left Boxes */
+.list-items:nth-child(even) .boxes{
+    left: -434px;
+    transform: translate(-200px, 0);
+}
+
+/* Inside Out Transition */
+
+.show .boxes
+{
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+.show:nth-child(odd) .boxes{
+    transform: translate(0, 0);
+}
+.show:nth-child(even) .boxes{
+    transform: translate(0, 0);
+}
+
+
+/* Dots */
+.list-items:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 30%;
+    width: 25px;
+    height: 25px;
+    background: var(--dot-color);
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+
+/* Media Queries */
+
+@media(max-width: 900px)
+{
+    .boxes{
+        width: 250px;
+    }
+    .list-items:nth-child(even) .boxes{
+        left: -284px;
+    }
+    .pdetails-links
+    {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 600px)
+{
+    #navbar
+    {
+        width: 100vw;
+    }
+    .list-items
+    {
+        margin-left: 20px;
+    }
+    .boxes
+    {
+        width: calc(100vw - 90px);
+    }
+    .list-items:nth-child(even) .boxes
+    {
+        left: 40px;
+    }
+    .pdetails-links
+    {
+        font-size: 1em;
+    }
+}
+.boxes h3{
+    text-align: center;
+    text-decoration-color: white;
+}
+
+.header-content
+{
+    text-align: center;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    font-family: var(--header-font);
+    font-weight: bold;
+    padding-top: 55px;
+}
+.header-icons
+{
+    color: white;
+}
+.sections
+{
+    margin-bottom: 0px;
+}
+
+hr.separator {
+	height: 6px;
+	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+}
+
+.box-content
+{
+    text-align: center;
+    font-family: var(--box-content-font);
+}
+.pdetails-text
+{
+    color: var(--text-color-pdetails);
+}
+.box-heading
+{
+    font-family: var(--box-heading-font);
+}
+.oskills-text
+{
+    color: var(--text-color-oskills);
+}
+.certifications-text
+{
+    color: var(--text-color-certifications);
+}
+
+#nav-home-text
+{
+    color: #DCDCDC;
+}
+.pdetails-divs
+{
+    font-size: 1rem;
+    cursor: default;
+}
+.pdetails-links
+{
+    color: white;
+    font-family: var(--box-content-font);
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition: background 0.25s ease-in-out;
+}
+.pdetails-links:hover
+{
+    color: white;
+    text-decoration: none;
+    background: var(--primary-color-pdetails);
+}
+
+
+/* Technical skills bars */
+
+.tskills-divs .progress div
+{
+    background-color: var(--primary-color-tskills);
+}
+
+.oskill-divs .progress div
+{
+    background-color: var(--primary-color-oskills);
+}
+
+.achievements-text
+{
+    color: var(--text-color-achievments);
+}
